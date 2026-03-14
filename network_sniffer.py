@@ -48,9 +48,9 @@ def packet_callback(packet):
 def signal_handler(sig, frame):
     filename = f"captured_traffic_{datetime.now().strftime('%Y%m%d_%H%M%S')}.pcap"
     wrpcap(filename, packets)
-    print(f"\n\n✅ Sniffing stopped!")
-    print(f"📁 {len(packets)} packets saved to → {filename}")
-    print("💡 Tip: Open this .pcap file in Wireshark for full analysis!")
+    print(f"\n\n Sniffing stopped!")
+    print(f" {len(packets)} packets saved to → {filename}")
+    print(" Tip: Open this .pcap file in Wireshark for full analysis!")
     sys.exit(0)
 
 signal.signal(signal.SIGINT, signal_handler)
